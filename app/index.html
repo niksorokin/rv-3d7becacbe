@@ -1057,7 +1057,7 @@ function procStats(pr){ const hands=pr.steps.reduce((a,s)=>a+s.min,0), wait=pr.s
   return { hands, wait, agentMin, assistMin, perUnitH:hands*pr.runs/60, apps:[...new Set(pr.steps.map(s=>s.app))], roles:[...new Set(pr.steps.map(s=>s.who))] }; }
 
 /* ---------- state & helpers ---------- */
-const S = { view:'person', person:'rachel', team:'fin', wi:2, anon:true, cost:55, proc:'p2', tab:'plan', sel:null, inPlan:new Set(), msgs:[] };
+const S = { view:'team', person:'rachel', team:'fin', wi:2, anon:true, cost:55, proc:'p2', tab:'plan', sel:null, inPlan:new Set(), msgs:[] };
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
