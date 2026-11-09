@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Silow — for insurance operations</title><!-- rev:ins-v9-202611100030 -->
+<title>Silow — for insurance operations</title><!-- rev:ins-v9-202611100034 -->
 <style>
   @font-face { font-family:"Suisse Intl"; src:url("./fonts/SuisseIntl-Regular.otf") format("opentype"); font-weight:400; font-display:swap; }
   @font-face { font-family:"Suisse Intl"; src:url("./fonts/SuisseIntl-Medium.otf") format("opentype"); font-weight:500; font-display:swap; }
@@ -804,7 +804,7 @@
     s.onload = () => {
       try {
         if (!window.UnicornStudio) return;
-        ['us-scene-b'].forEach(id => {
+        ['us-scene-b'].filter(id => document.getElementById(id)).forEach(id => {
           window.UnicornStudio.addScene({
             elementId: id,
             filePath: './assets/blue-donut.json',
