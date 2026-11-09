@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Silow — for insurance operations</title><!-- rev:ins-v9-202611092145 -->
+<title>Silow — for insurance operations</title><!-- rev:ins-v9-202611100030 -->
 <style>
   @font-face { font-family:"Suisse Intl"; src:url("./fonts/SuisseIntl-Regular.otf") format("opentype"); font-weight:400; font-display:swap; }
   @font-face { font-family:"Suisse Intl"; src:url("./fonts/SuisseIntl-Medium.otf") format("opentype"); font-weight:500; font-display:swap; }
@@ -555,7 +555,18 @@
   /* v9 — Windows build caption on the recorder zoom */
   .rec-zoom figcaption .ill{ display:block; margin-top:10px; font-size:12px; letter-spacing:.1em; color:var(--faint); }
 
-  /* v9 — after an acquisition */
+  /* User-restored HIPAA layout, matching the supplied screenshot. */
+  .hipaa-restored{grid-template-columns:1.1fr .9fr;}
+  .hipaa-restored h2{font-size:clamp(44px,4.6vw,78px);}
+  .hipaa-restored .body{max-width:620px;}
+  .hipaa-right{text-align:left;}
+  .hipaa-right .stat-num{font-size:clamp(88px,8.4vw,152px);}
+  .hipaa-label{font-size:clamp(32px,3.2vw,56px);font-weight:500;letter-spacing:-.04em;}
+  .hipaa-provider{margin-top:16px;color:var(--mute);font-size:clamp(16px,1.3vw,22px);}
+  .hipaa-closing{margin-top:32px;padding-top:30px;border-top:1px solid var(--line);color:var(--accent);font-size:clamp(22px,2vw,32px);font-weight:500;line-height:1.2;letter-spacing:-.03em;}
+  @media(max-width:900px){.hipaa-restored{grid-template-columns:1fr;}.hipaa-right .stat-num{font-size:76px;}}
+
+  /* Legacy unused acquisition layout */
   .acq{ margin-top:clamp(26px,3.4vh,44px); display:grid; grid-template-columns:repeat(3,1fr); width:100%; max-width:1440px;
         border-top:1px solid var(--line); border-left:1px solid var(--line); }
   .acq > div{ border-right:1px solid var(--line); border-bottom:1px solid var(--line); padding:clamp(22px,2.6vh,30px) clamp(20px,1.8vw,28px); text-align:left; }
@@ -628,18 +639,6 @@
     <div class="roles-foot rise d3">Claims and underwriting are examples of the same pattern <b>·</b> the work we start with is yours to choose.</div>
   </section>
 
-  <!-- 04b · new acquisitions -->
-  <section class="tight">
-    <div class="eyebrow rise">Acquisitions <b>·</b> carve-outs <b>·</b> TSA</div>
-    <h2 class="rise d1" style="font-size:clamp(44px,4.6vw,84px); max-width:none;">New operations you can&rsquo;t see yet.<br><em>Measured in weeks, not quarters.</em></h2>
-    <p class="body rise d2" style="max-width:1120px;">An acquired entity or a separated business comes with people you don&rsquo;t know, processes nobody wrote down, and no way to tell which departments are efficient. Recording runs there alongside your own teams: <b>the same measure on both sides, from the first week</b> &mdash; no mapping project, no interview round, and no waiting for the TSA clock to run out.</p>
-    <div class="acq rise d2">
-      <div><div class="k">01</div><div class="r">The same work, side by side</div><div class="d">Close, reconciliation, payables and reporting, measured the same way in both entities &mdash; hours, volumes, cost per item, days to close.</div></div>
-      <div><div class="k">02</div><div class="r">Where the extra hours are</div><div class="d">Which departments carry duplicated or manual steps, and which are already efficient. Efficiency per department, not per person.</div></div>
-      <div><div class="k">03</div><div class="r">What to standardise &mdash; or hand back &mdash; first</div><div class="d">Ranked by the hours it gives back and the effort it takes, so the integration or exit plan is written on evidence, not interviews.</div></div>
-    </div>
-  </section>
-
   <!-- 05 · how it works (one slide, incl. redaction + encryption) -->
   <section class="tight">
     <div class="eyebrow rise">How it works</div>
@@ -704,7 +703,6 @@
           <li>Silow is your data processor under a <b>DPA</b>.</li>
           <li>Subprocessors: a major cloud provider (ISO 27001 / 27017 / 27018) and model inference with <b>zero data retention</b>, no training on your data.</li>
         </ul>
-        <div class="mw">For a first team, with no work for your IT.</div>
       </div>
       <div class="mcol own">
         <div class="mk">02 <b>·</b> On your servers</div>
@@ -720,32 +718,29 @@
     <div class="mbridge rise d3">Start hosted, move to your servers later <b>·</b> same recorder, same reports</div>
   </section>
 
-  <!-- 07 · HIPAA case -->
+  <!-- 07 · HIPAA deployment -->
   <section>
-    <div class="sec-split case">
+    <div class="sec-split hipaa-restored">
       <div>
-        <div class="eyebrow rise">In production <b>·</b> US insurance-claims operation</div>
-        <h2 class="rise d1">PHI every day.<br><em>In production.</em></h2>
-        <p class="body rise d2">A US insurance-claims operation handling medical documents daily, in a <b>HIPAA-regulated environment</b>. Silow maps their claims workflow.</p>
+        <div class="eyebrow rise">Deployed in a customer environment</div>
+        <h2 class="rise d1">HIPAA compliance?<br><em>Solved.</em></h2>
+        <p class="body rise d2">Silow maps workflows involving medical records. It runs <b>entirely on the customer’s servers</b>, supporting the customer’s HIPAA compliance requirements.</p>
       </div>
-      <div class="case-stats rise d3">
-        <div class="cs"><div class="stat-num">20<span class="ar">→</span>200</div><div class="stat-label">people. We started together in <b>August</b> with 20.</div></div>
-        <div class="cs"><div class="stat-num">100<small>%</small></div><div class="stat-label"><b>on-prem</b>, on their own model provider.</div></div>
+      <div class="hipaa-right rise d3">
+        <div class="stat-num">100<small>%</small></div>
+        <div class="hipaa-label">On-premises.</div>
+        <div class="hipaa-provider">With the customer’s chosen model provider.</div>
+        <div class="hipaa-closing">Secure deployment.<br>Your infrastructure. Your control.</div>
       </div>
     </div>
   </section>
 
   <!-- 08 · CTA -->
-  <section class="scene-slide">
-    <div class="scene" id="us-scene-b" aria-hidden="true"></div>
-    <div class="scene-shade"></div>
-    <div class="content">
-      <div class="eyebrow rise in">Next step</div>
-      <h2 class="rise in" style="font-size:clamp(64px,7vw,124px);">Let&rsquo;s start.</h2>
-      <p class="body rise in d1">Begin with one month. <b>You choose the team and how many people.</b></p>
-      <a class="btn rise in d3" href="https://cal.com/silow-ai/silow-demo">Book a 30-minute call →</a>
-      <div class="contacts rise in d3"><a href="mailto:nikita@silow.ai">nikita@silow.ai</a> · <a href="https://silow.ai">silow.ai</a></div>
-    </div>
+  <section>
+    <div class="eyebrow rise">Next step</div>
+    <h2 class="rise d1" style="font-size:clamp(64px,7vw,124px);">Let&rsquo;s <em>start.</em></h2>
+    <p class="body rise d2">Begin with one month. <b>You choose the team and how many people.</b></p>
+    <div class="texture rise d3"><a href="mailto:nikita@silow.ai" style="color:inherit;text-decoration:none;">nikita@silow.ai</a> <b>·</b> <a href="https://silow.ai" style="color:inherit;text-decoration:none;">silow.ai</a></div>
   </section>
 
 </main>
