@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Silow — for insurance operations</title><!-- rev:ins-v9-202611100037 -->
+<title>Silow — for insurance operations</title><!-- rev:ins-v9-202611100150 -->
 <style>
   @font-face { font-family:"Suisse Intl"; src:url("./fonts/SuisseIntl-Regular.otf") format("opentype"); font-weight:400; font-display:swap; }
   @font-face { font-family:"Suisse Intl"; src:url("./fonts/SuisseIntl-Medium.otf") format("opentype"); font-weight:500; font-display:swap; }
@@ -566,6 +566,12 @@
   .hipaa-closing{margin-top:32px;padding-top:30px;border-top:1px solid var(--line);color:var(--accent);font-size:clamp(22px,2vw,32px);font-weight:500;line-height:1.2;letter-spacing:-.03em;}
   @media(max-width:900px){.hipaa-restored{grid-template-columns:1fr;}.hipaa-right .stat-num{font-size:76px;}}
 
+  /* Nine use cases: finance first, specialist examples last. */
+  .roles-nine{grid-template-columns:repeat(3,1fr);margin-top:28px;}
+  .roles-nine > div{padding:18px 22px;}
+  .roles-nine + .roles-foot{margin-top:24px;}
+  @media(max-width:900px){.roles-nine{grid-template-columns:1fr;}}
+
   /* Legacy unused acquisition layout */
   .acq{ margin-top:clamp(26px,3.4vh,44px); display:grid; grid-template-columns:repeat(3,1fr); width:100%; max-width:1440px;
         border-top:1px solid var(--line); border-left:1px solid var(--line); }
@@ -626,13 +632,14 @@
   <section>
     <div class="eyebrow rise">Where it helps <b>·</b> finance &amp; operations first</div>
     <h2 class="rise d1" style="font-size:clamp(44px,4.8vw,80px); max-width:none;">Anywhere work runs<br><em>between systems.</em></h2>
-    <div class="roles rise d2">
+    <div class="roles roles-nine rise d2">
       <div><div class="r">Month-end close</div><div class="d">Reconciliation and the operating pack rebuilt in Excel, month after month.</div></div>
       <div><div class="r">Reconciliation &amp; payments</div><div class="d">GL against the bank feed, matched line by line; exceptions take the time.</div></div>
       <div><div class="r">Accounts payable</div><div class="d">Invoice lines typed from PDFs that already arrive as data.</div></div>
       <div><div class="r">FP&amp;A &amp; reporting</div><div class="d">The same numbers pulled from the same systems for every pack.</div></div>
       <div><div class="r">Procurement &amp; vendor ops</div><div class="d">Approvals chased by email; status lives in one spreadsheet.</div></div>
       <div><div class="r">Reinsurance &amp; recoveries</div><div class="d">Bordereaux built by hand from extracts.</div></div>
+      <div><div class="r">M&amp;A analytics</div><div class="d">Pre- and post-acquisition process and technology assessment.</div></div>
       <div><div class="r">Claims operations</div><div class="d">Documents chased and matched to the file.</div></div>
       <div><div class="r">Underwriting support</div><div class="d">Submissions re-typed before anyone decides.</div></div>
     </div>
@@ -658,7 +665,7 @@
           <div class="fr"><span>Bank account</span><b class="tok">ACCOUNT</b></div>
           <div class="fr"><span>Invoice</span><b class="tok">INVOICE</b></div>
           <div class="fr"><span>Amount</span><b>$1,240.00</b></div></div>
-        <div class="n">02</div><div class="t">Redact</div><div class="b">PII &amp; PHI masked by our own model, before any analysis.</div>
+        <div class="n">02</div><div class="t">Redact</div><div class="b">Sensitive vendor and client information masked by our own model, before any analysis.</div>
       </div>
       <div>
         <div class="pv stp">
